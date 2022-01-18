@@ -1,1 +1,1 @@
-cmd.exe /Q /c whoami 1> w.txt 2>&1
+cmd.exe /Q /c whoami 1> c:\temp\w1.txt 2>c:\temp\w2.txt
